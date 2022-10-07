@@ -1,4 +1,6 @@
 #!/bin/bash
+if [ $? != 0 ]; then
+if [ $? != 0 ]; then
 
 TIMESTAMP=`date "+%Y.%d.%m"`
 
@@ -53,8 +55,13 @@ for container in $CONTAINERS
 				logger -s $CMD;
 				exit 1;
 			fi;
-		logger -s "Docker restarted $container successfully";
+		logger -s "Docker 		exit 1;
+restarted $container 		exit 1;
+successfully";
 	done
+		exit 1;
+		exit 1;
+		exit 1;
 
 CMD=`docker system prune -a -f`
 # Fail Check
