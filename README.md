@@ -1,7 +1,8 @@
 # docker-updater
-bash script to update all docker containers on your computer (JQ REQUIRED INSTALL)
 
-I'm a beginning scripter and programmer so this is just something I felt was a needed project. Any feedback, please email to jestergod+docup@digital-dreamer.org
+The initial script come from [https://github.com/godofjesters/docker-updater](https://github.com/godofjesters/docker-updater)
+
+bash script to update all docker containers on your computer (PYTHON and JQ REQUIRED INSTALL)
 
 This is a simple script for keeping your docker containers up to date.
 
