@@ -120,7 +120,7 @@ done
 # Check all containers are restarted before prune
 NEWCONTAINERS=`docker ps --format "{{.Names}}" | sort`
 if [ ${NEWCONTAINERS} != ${CONTAINERS} ]; then
-	logger -t DockerUpdater -s "WARNING: All containers are NOT restarted. List of running container before update:${container}S - List of running container after: $NEWCONTAINERS";
+	logger -t DockerUpdater -s "WARNING: All containers are NOT restarted. List of running container before update:${CONTAINERS} - List of running container after: ${NEWCONTAINERS}";
 	exit 1;
 fi;
 
