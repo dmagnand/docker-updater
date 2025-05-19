@@ -79,7 +79,7 @@ do :
 	# Fail Check
 	if [ $? != 0 ]; then
 		logger -t DockerUpdater -s "DOCKER STOP ERROR: Problem prevented ${container} stopping. Stop command aborted.";
-		logger -s ${CMD};
+		logger -s "${CMD}";
 		exit 1;
 	fi;
 	logger -t DockerUpdater -s "Container ${container} stopped successfully";
@@ -111,8 +111,8 @@ do :
 	# Fail Check
 	if [ $? != 0 ]; then
 		logger -t DockerUpdater -s "DOCKER RESTART ERROR: Problem prevented ${container} from being restarted. Restart command aborted.";
-		logger -t DockerUpdater -s "Command:${DOCKER_RUN} ${EXTRAHOSTS} --restart always -d --name=${container} ${PORTS} ${BINDS} ${ENV} ${IMAGE}";
-		logger -t DockerUpdater -s "Result:${CMD}";
+		logger -t DockerUpdater -s "DOCKER RESTART Command:${DOCKER_RUN} ${EXTRAHOSTS} --restart always -d --name=${container} ${PORTS} ${BINDS} ${ENV} ${IMAGE}";
+		logger -t DockerUpdater -s "DOCKER RESTART Result:${CMD}";
 		exit 1;
 	fi;
 	logger -t DockerUpdater -s "Docker restarted ${container} successfully";
