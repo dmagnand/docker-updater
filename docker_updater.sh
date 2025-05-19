@@ -111,7 +111,8 @@ do :
 	# Fail Check
 	if [ $? != 0 ]; then
 		logger -t DockerUpdater -s "DOCKER RESTART ERROR: Problem prevented ${container} from being restarted. Restart command aborted.";
-		logger -t DockerUpdater -s ${CMD};
+		logger -t DockerUpdater -s "Command:${DOCKER_RUN} ${EXTRAHOSTS} --restart always -d --name=${container} ${PORTS} ${BINDS} ${ENV} ${IMAGE}";
+		logger -t DockerUpdater -s "Result:${CMD}";
 		exit 1;
 	fi;
 	logger -t DockerUpdater -s "Docker restarted ${container} successfully";
@@ -128,7 +129,7 @@ CMD=`docker system prune -a -f`
 # Fail Check
 if [ $? != 0 ]; then
 	logger -t DockerUpdater -s "DOCKER PRUNE ERROR: Problem prevented clean up of unused containers. Prune command aborted.";
-	logger -t DockerUpdater -s ${CMD};
+	logger -t DockerUpdater -s "${CMD}";
 	exit 1;
 fi;
 logger -t DockerUpdater -s "All unused information has been removed successfully";
